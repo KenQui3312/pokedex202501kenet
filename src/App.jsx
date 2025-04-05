@@ -10,7 +10,7 @@ import './App.css'
 
 function App() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL ?? '/'}>
+    <BrowserRouter basename={import.meta.env.DEPLOY_BASE_URL ?? '/'}>
       <Routes  >
         <Route element={<Layout />}>
           <Route index element={<DashboardPage/>} />
