@@ -1,42 +1,112 @@
 @import "tailwindcss";
 
-
 body {
-    height: 100%;
-    min-height: 100vh;
+  height: 100%;
+  min-height: 100vh;
 }
 
+
 #root {
-    @apply flex flex-col min-h-screen;
+  @apply flex flex-col min-h-screen;
 }
 
 .navigation ul {
-    @apply flex flex-col md:flex-row m-0 p-0 justify-center items-center gap-4;
+  @apply flex flex-col md:flex-row m-0 p-0 justify-center items-center gap-4;
 }
 
-.navigation ul li a{
-    @apply inline-block text-sm py-2 px-4 cursor-pointer;
+.navigation ul li a {
+  @apply inline-block text-sm py-2 px-4 cursor-pointer;
 }
-
 
 footer {
-    @apply bg-black text-white text-center p-4;
+  @apply bg-red-500 text-white text-center p-4;
 }
 
-.pokemonList{
-    @apply flex justify-between gap-4 flex-wrap p-4
-}
-
-.pokemonListItem{
-    @apply flex flex-row gap-2 min-w-60 border ;
-}
-.pokemonListItem div{
-    @apply flex flex-col p-2;
-}
-
-.pokemonListItem img{
-    @apply object-cover;
+.pokemonList {
+  @apply flex flex-col min-h-screen; 
+  background-image: url('/src/assets/8666420.jpg');
+  background-size: cover;       /* opcional: ajusta imagen */
+  background-position: center; 
+  background-attachment: fixed
 }
 
 
+.pokemonListItem div {
+  @apply flex flex-col p-2;
+}
+
+.pokemonListItem img {
+  @apply object-cover;
+}
+
+.pokemonContainer {
+  @apply flex flex-col  ;
+}
+
+.pokemonContent {
+    @apply flex-grow container mx-auto py-8 w-full;
+}
+
+.pokemonListItem { /* Clase para el contenedor de cada Pokémon */
+    @apply  rounded-md shadow-lg p-4 flex flex-col items-center;
+    background-color: rgba(115, 230, 125, 0.9);
+     
+    
+}
+
+.pagination {
+  @apply py-4 flex justify-center items-center border-t border-gray-400;
+}
+
+.aboutPage{
+    @apply min-h-screen flex items-center;
+    background-image: url("./assets/8666420.jpg");
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    justify-content: center;
+
+}
+
+.aboutContainer{
+    @apply flex flex-col items-center shadow-2xl  rounded-md;
+    width: 50%;
+    height: 50%;
+    padding: 3rem;
+    background-color: rgba(115, 230, 125, 0.93);
+}
+.aboutContainer h1{
+    padding: 2rem;
+}
+
+.aboutContainer p{
+    padding: 1rem;
+}
+
+.aboutContainer ul{
+    padding: .5rem;
+} 
+
+.aboutContainer ul li{
+    padding: .5rem;
+}
+
+.detailsPage{
+    @apply flex flex-col items-center min-h-screen ;
+    padding: 5rem;
+    background-image: url("./assets/8666420.jpg");
+    background-position: center;
+    background-attachment: fixed;
+}
+.pokemonDetail{
+    @apply flex items-center flex-col min-h-screen rounded-md shadow-2xl; 
+    background-color: rgba(115, 230, 125, 0.9);
+    padding:2rem;
+}
+
+.pokemonDetail p{
+    padding: 2rem;
+  
+}
 @import "./styles/paging.css";

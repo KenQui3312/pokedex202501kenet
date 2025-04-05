@@ -63,3 +63,33 @@ export const getPokemonImg = (pokemonUrl) => {
         imgSprite: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonCode}.png`
     }
 }
+
+export const usePokemonLocation = (code) => {
+    const [locationData, setLocationData] = useState(null);
+    useEffect(() => {
+     
+        const url = `https://pokeapi.co/api/v2/pokemon/${code}/encounters`;
+        fetch(url).then(
+          (response)=>{
+              if(response.status===200){
+                  return response.json()
+              }
+              else{
+                  return new Promise(()=>null);
+              }
+          }
+        )
+        .then(
+          (data)=>{
+              setLocationData(data);
+          }
+        )
+        .catch(
+          (error)=>{
+              console.log("Error al cargar la data" + code,error)
+          }
+        )
+  
+    }, [code, setLocationData]);
+    return locationData;
+  };

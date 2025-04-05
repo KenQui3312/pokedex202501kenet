@@ -12,13 +12,21 @@ export const PokemonList = (
             { pokemonList.map(
                 (item)=>{
                     return (
-                        <PokemonListItem
-                            key={item.name}
-                            name={item.name}
-                            url={item.url}
-                            {...getPokemonImg(item.url)}
-                            onClickHandler={clickHandler}
-                        />
+                        <section className="pokemonContainer">
+                            <div className="pokemonContent">
+                                <div className="pokemonGrid">
+                                    <PokemonListItem
+                                        key={item.name}
+                                        name={item.name}
+                                        url={item.url}
+                                        {...getPokemonImg(item.url)}
+                                        onClickHandler={clickHandler}
+                                    />
+                                </div>
+                            </div>
+
+                        </section>
+
                     )
                 }
             )}
