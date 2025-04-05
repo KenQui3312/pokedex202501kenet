@@ -9,7 +9,7 @@ permissions:
   pages: write
   id-token: write
 env:
-  VITE_DEPLOY_BASE_URL: ${{vars.VITE_DEPLOY_BASE_URL}}
+  VITE_DEPLOY_BASE_URL: /pokedex202501kenet/
 concurrency:
   group: "pages"
   cancel-in-progress: false
