@@ -6,13 +6,13 @@ import { Details } from './pages/details';
 import { Layout } from './pages/Layout';
 
 import './App.css'
-const BASE_URL='';
+
 
 function App() {
   
   return (
     
-    <BrowserRouter basename={'/'}>
+    <BrowserRouter basename={import.meta.env.DEPLOY_BASE_URL ?? '/'}>
       <Routes  >
         <Route element={<Layout />}>
           <Route index element={<DashboardPage/>} />
