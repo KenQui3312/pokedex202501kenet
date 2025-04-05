@@ -4,8 +4,8 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: process.env.VITE_DEPLOY_BASE_URL,
-  plugins: [
+  base: process.env.DEPLOY_BASE_URL,
+    plugins: [
     react(),
     tailwindcss(),
   ],

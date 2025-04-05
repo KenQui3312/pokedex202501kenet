@@ -9,7 +9,7 @@ permissions:
   pages: write
   id-token: write
 env:
-  VITE_DEPLOY_BASE_URL: /pokedex202501kenet/
+  DEPLOY_BASE_URL: ${{vars.DEPLOY_BASE_URL}}
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -32,7 +32,7 @@ jobs:
       - name: Instalar Dependencias
         run: npm install
       - name: Verificar Variables de Ambiente
-        run : echo "VITE_DEPLOY_BASE_URL $VITE_DEPLOY_BASE_URL"
+        run : echo "DEPLOY_BASE_URL $DEPLOY_BASE_URL"
       - name: Compilar Proyecto
         run: npm run build
       - name: Generar 404 html
